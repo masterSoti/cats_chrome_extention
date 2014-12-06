@@ -26,18 +26,26 @@
     }
     google.setOnLoadCallback(OnLoad);
 */
-function load() {
-	var x = Math.floor((Math.random() *10) + 1 );
-	var img = new Image();
+$(document).ready(
+	function load() {
+		var x = Math.floor((Math.random() *10 ) + 1 );
+		var img = new Image();
 		img.src = 'cat'+x+'.jpg';
+		var div = document.getElementById('img');
+  	div.appendChild(img);
+	}/*
+	function(){
+		var red = Math.floor(Math.random() * 255 + 1);
+		var blue = Math.floor(Math.random() * 255 + 1);
+		var green = Math.floor(Math.random() * 255 + 1);
+		$('body').css("color", "rgb("+red+", "+green+", "+blue")");
+	}*/
+);
+/*$('button').onload(function load() {
+	var x = Math.floor((Math.random() *10 ) + 1 );
+	var img = new Image();
+	img.src = 'cat'+x+'.jpg';
 	var div = document.getElementById('img');
-	img.onload = function() {
-  		div.appendChild(img);
-    }
-}
-
-window.onload = load();
-
-function reload() {
-   	load();
-}
+	div.appendChild(img);
+});
+*/
