@@ -26,14 +26,24 @@
     }
     google.setOnLoadCallback(OnLoad);
 */
-function random_title(){
-	var red = Math.floor(Math.random() * 255 + 1);
-	var green = Math.floor(Math.random() * 255 + 1);
-	var blue = Math.floor(Math.random() * 255 + 1) ;
-	$('body').css("color", "rgb("+red+", "+green+", "+blue+")");
-	setTimeout(random_title, 1000);
+function red(){//random color changer for the title of the extention
+	return Math.floor(Math.random() * 255 + 1);
+	setTimeout(red, 1000);
 }
-$(document).ready(
+function green(){
+	return Math.floor(Math.random() * 255 + 1);
+	setTimeout(green, 100);
+}
+function blue(){
+	return Math.floor(Math.random() * 255 + 1);
+	setTimeout(blue, 10);
+}
+function random_title(){
+	//console.log(red());
+	$('body').css("color", "rgb("+red()+", "+green()+", "+blue()+")");
+	setTimeout(random_title, 550);
+}
+$(document).ready(//main function to to be called
 	function load() {
 		var x = Math.floor((Math.random() *10 ) + 1 );
 		var img = new Image();
